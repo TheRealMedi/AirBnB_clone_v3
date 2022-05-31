@@ -14,6 +14,10 @@ app.register_blueprint(app_views)
 def close_storage(self):
     storage.close()
 
+@app.errorhandler(404)
+def not_found(e):
+    return jsonify({"error": "Not found"}), 404
+
 if __name__ == "__main__":
     HBNB_API_HOST = getenv('HBNB_API_HOST') or "0.0.0.0"
     HBNB_API_PORT = getenv('HBNB_API_PORT') or 5000
