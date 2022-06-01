@@ -10,7 +10,6 @@ def get_tasks():
     """Return the JSON status"""
     return jsonify({"status": "OK"})
 
-
 @app_views.route('/stats')
 def count_function():
     """retrieves the number of each objects by type"""
